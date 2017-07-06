@@ -15,6 +15,7 @@ import { Keg } from './keg.model';
        <li *ngFor="let currentKeg of childKegList">{{currentKeg.brand}} {{currentKeg.beer}} {{currentKeg.price}} {{currentKeg.abv}} {{currentKeg.pints}}
          <button (click)="editButtonHasBeenClicked(currentKeg)">Edit!</button>
          <button (click)="subtractPint(currentKeg)">Pint Subtract</button>
+         <button (click)="subtractPitcher(currentKeg)">Pitcher Subtract</button>
        </li>
      </ul>
    `
@@ -45,6 +46,15 @@ export class KegListComponent {
       return currentKeg.pints;
     } else {
       alert("There's no more! Choose another keg!")
+    }
+  }
+
+  subtractPitcher(currentKeg: Keg) {
+    if (currentKeg.pints > 0) {
+      currentKeg.pints = currentKeg.pints - 5;
+      return currentKeg.pitcher;
+    } else {
+      console.log(subtractPitcher)
     }
   }
 
