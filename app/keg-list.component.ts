@@ -52,9 +52,9 @@ export class KegListComponent {
   subtractPitcher(currentKeg: Keg) {
     if (currentKeg.pints > 0) {
       currentKeg.pints = currentKeg.pints - 5;
-      return currentKeg.pitcher;
+      return currentKeg.pints;
     } else {
-      console.log(subtractPitcher)
+      console.log(this.subtractPitcher)
     }
   }
 
